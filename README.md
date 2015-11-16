@@ -1,5 +1,10 @@
 # movieplex 7 Hands-on labs
 
+## Run app
+
+    # Maven
+    mvn wildfly:run
+
 ## Sonarqube
 
 ### Setup
