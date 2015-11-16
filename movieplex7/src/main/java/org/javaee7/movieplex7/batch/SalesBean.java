@@ -48,6 +48,8 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceUnit;
+
+import org.apache.log4j.Logger;
 import org.javaee7.movieplex7.entities.Sales;
 
 
@@ -59,14 +61,16 @@ import org.javaee7.movieplex7.entities.Sales;
 public class SalesBean {
     
     @PersistenceUnit EntityManagerFactory em;
-    
+
+    final static Logger logger = Logger.getLogger(SalesBean.class);
+
     public void runJob() {
         try {
             JobOperator jo = BatchRuntime.getJobOperator();
             long jobId = jo.start("eod-sales", new Properties());
-            System.out.println("Started job: with id: " + jobId);
+            logger.info("Started job: with id: " + jobId);
         } catch (JobStartException ex) {
-            ex.printStackTrace();
+            logger.error("Job failed: " + ex);
         }
     }
     

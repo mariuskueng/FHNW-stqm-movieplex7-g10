@@ -47,6 +47,8 @@ import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
+
+import org.apache.log4j.Logger;
 import org.javaee7.movieplex7.entities.Movie;
 import org.javaee7.movieplex7.entities.ShowTiming;
 
@@ -60,9 +62,11 @@ public class Booking implements Serializable {
     int movieId;
     String startTime;
     int startTimeId;
-    
+
+    final static Logger logger = Logger.getLogger(Booking.class);
+
     @PersistenceContext
-    EntityManager em;
+    transient EntityManager em;
 
     public int getMovieId() {
         return movieId;
@@ -76,6 +80,7 @@ public class Booking implements Serializable {
         try {
             return em.createNamedQuery("Movie.findById", Movie.class).setParameter("id", movieId).getSingleResult().getName();
         } catch (NoResultException e) {
+            logger.error("getMovieName failed: " + e);
             return "";
         }
     }
@@ -114,6 +119,7 @@ public class Booking implements Serializable {
                     .getTheaterId()
                     .getId().toString();
         } catch (NoResultException e) {
+            logger.error("getTheater failed: " + e);
             return "none";
         }
     }
