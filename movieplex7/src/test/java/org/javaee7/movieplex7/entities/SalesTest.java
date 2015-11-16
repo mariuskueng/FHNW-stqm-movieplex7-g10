@@ -43,5 +43,14 @@ public class SalesTest {
 
         classUnderTestClone = classUnderTest;
         assertTrue(classUnderTest.equals(classUnderTestClone));
+
+        Object fakeObject = new Object();
+        assertFalse(classUnderTest.equals(fakeObject));
+    }
+
+    @Test
+    public void testToString() {
+        String stringUnderTest = "foo.Sales[ id=" + classUnderTest.getId() + " ]";
+        assertEquals(classUnderTest.toString(), stringUnderTest);
     }
 }
