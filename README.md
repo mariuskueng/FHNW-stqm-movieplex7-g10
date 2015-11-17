@@ -1,9 +1,16 @@
 # movieplex 7 Hands-on labs
 
-## Run app
+## Setup
+
+    brew install wildfly-as
+
+## Usage
 
     # Maven
     mvn wildfly:run
+
+    # Intellij Ultimate
+    Set `wildfly-as` path in JBoss application server config of **Intellij** (Run configurations).
 
 ## Sonarqube
 
