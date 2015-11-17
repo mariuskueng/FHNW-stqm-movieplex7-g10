@@ -72,7 +72,7 @@ public class ReceivePointsBean {
     public String receiveMessage() {
         try (JMSConsumer consumer = context.createConsumer(pointsQueue)) {
             String message = consumer.receiveBody(String.class);
-            System.out.println("Received message: " + message);
+            Logger.getLogger(ReceivePointsBean.class.getName()).log(Level.INFO, "Received message: " + message);
             return message;
         }
     }
@@ -89,7 +89,7 @@ public class ReceivePointsBean {
         } catch (JMSException ex) {
             Logger.getLogger(ReceivePointsBean.class.getName()).log(Level.SEVERE, null, ex);
         }
-        System.out.println("Getting queue size: " + count);
+        Logger.getLogger(ReceivePointsBean.class.getName()).log(Level.INFO, "Getting queue size: " + count);
         return count;
     }
 }

@@ -40,6 +40,8 @@
 package org.javaee7.movieplex7.batch;
 
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.batch.api.chunk.AbstractItemWriter;
 import javax.enterprise.context.Dependent;
 import javax.inject.Named;
@@ -61,7 +63,7 @@ public class SalesWriter extends AbstractItemWriter {
     @Transactional
     public void writeItems(List list) {
         for (Sales s : (List<Sales>)list) {
-            System.out.println("SalesWriter.writeItem: " + s);
+            Logger.getLogger(SalesReader.class.getName()).log(Level.INFO, "SalesWriter.writeItem: " + s);
             em.persist(s);
         }
     }

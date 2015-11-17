@@ -72,7 +72,7 @@ public class SalesReader extends AbstractItemReader {
         String string = null;
         try {
             string = reader.readLine();
-            System.out.println("SalesReader.readItem: " + string);
+            Logger.getLogger(SalesReader.class.getName()).log(Level.INFO, "SalesReader.readItem: " + string);
         } catch (IOException ex) {
             Logger.getLogger(SalesReader.class.getName()).log(Level.SEVERE, null, ex);
         }

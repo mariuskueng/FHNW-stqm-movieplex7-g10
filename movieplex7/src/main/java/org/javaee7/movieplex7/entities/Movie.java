@@ -82,6 +82,9 @@ public class Movie implements Serializable {
     private Collection<ShowTiming> showTimingCollection;
 
     public Movie() {
+        /**
+         * Empty constructor for MovieReader
+         */
     }
 
     public Movie(Integer id) {

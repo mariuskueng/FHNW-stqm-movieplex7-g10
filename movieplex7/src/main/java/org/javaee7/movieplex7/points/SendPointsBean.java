@@ -47,6 +47,8 @@ import javax.jms.JMSContext;
 import javax.jms.Queue;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * @author Arun Gupta
@@ -75,7 +77,7 @@ public class SendPointsBean {
     Queue pointsQueue;
 
     public void sendMessage() {
-        System.out.println("Sending message: " + message);
+        Logger.getLogger(SendPointsBean.class.getName()).log(Level.INFO, "Sending message: " + message);
 
         context.createProducer().send(pointsQueue, message);
     }
