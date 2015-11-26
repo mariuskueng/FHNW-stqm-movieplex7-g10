@@ -85,6 +85,9 @@ public class ShowTiming implements Serializable {
     private Movie movieId;
     
     public ShowTiming() {
+        /**
+         * Empty constructor for ShowTiming
+         */
     }
 
     public ShowTiming(Integer id) {

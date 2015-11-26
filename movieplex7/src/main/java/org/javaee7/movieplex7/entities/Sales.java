@@ -74,12 +74,11 @@ public class Sales implements Serializable {
     @NotNull
     @Column(name = "AMOUNT")
     private double amount;
-    
-//    @JoinColumn(name = "ID", referencedColumnName = "ID", insertable = false, updatable = false)
-//    @OneToOne(optional = false)
-//    private Timeslot timeslot;
 
     public Sales() {
+        /**
+         * Empty constructor for SalesProcessor
+         */
     }
 
     public Sales(Integer id) {
@@ -106,14 +105,6 @@ public class Sales implements Serializable {
     public void setAmount(double amount) {
         this.amount = amount;
     }
-
-//    public Timeslot getTimeslot() {
-//        return timeslot;
-//    }
-//
-//    public void setTimeslot(Timeslot timeslot) {
-//        this.timeslot = timeslot;
-//    }
 
     @Override
     public int hashCode() {

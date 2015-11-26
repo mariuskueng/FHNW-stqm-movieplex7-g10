@@ -75,6 +75,9 @@ public class Theater implements Serializable {
     private Collection<ShowTiming> showTimingCollection;
 
     public Theater() {
+        /**
+         * Empty constructor for Theater
+         */
     }
 
     public Theater(Integer id) {

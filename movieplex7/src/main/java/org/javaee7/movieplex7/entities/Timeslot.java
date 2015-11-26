@@ -85,6 +85,9 @@ public class Timeslot implements Serializable {
     private Collection<ShowTiming> showTimingCollection;
 
     public Timeslot() {
+        /**
+         * Empty constructor for Timeslot
+         */
     }
 
     public Timeslot(Integer id) {
