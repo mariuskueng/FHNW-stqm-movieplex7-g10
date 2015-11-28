@@ -2,4 +2,4 @@ language: java
 sudo: false
 env:
 - SRC_DIR="movieplex7"
-script: cd $SRC_DIR && mvn clean verify
+script: cd $SRC_DIR && mvn test
