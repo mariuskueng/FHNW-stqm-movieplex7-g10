@@ -1,0 +1,5 @@
+language: java
+sudo: false
+env:
+- SRC_DIR="movielplex7"
+script: cd $SRC_DIR && mvn clean verify
