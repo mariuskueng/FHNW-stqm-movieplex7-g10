@@ -25,7 +25,7 @@ public class MovieTest {
     @Test
     public void testName() {
         classUnderTest.setName("The Room");
-        assertEquals(classUnderTest.getName(), "The Room");
+        assertEquals("The Room", classUnderTest.getName());
     }
 
     @Test
@@ -34,7 +34,7 @@ public class MovieTest {
 
         classUnderTest.setActors(actors);
 
-        assertEquals(classUnderTest.getActors(), actors);
+        assertEquals(actors, classUnderTest.getActors());
     }
 
     @Test

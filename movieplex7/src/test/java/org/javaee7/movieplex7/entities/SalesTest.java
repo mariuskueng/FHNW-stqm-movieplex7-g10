@@ -24,7 +24,7 @@ public class SalesTest {
 
     @Test
     public void testGetId() throws Exception {
-        assertEquals(classUnderTest.getId(), new Integer(1));
+        assertEquals(new Integer(1), classUnderTest.getId());
     }
 
     @Test
@@ -32,7 +32,7 @@ public class SalesTest {
         double amount = 1000;
         classUnderTest.setAmount(amount);
 
-        assertEquals(classUnderTest.getAmount(), amount, 0.001);
+        assertEquals(amount, classUnderTest.getAmount(), 0.001);
     }
 
     @Test
@@ -51,6 +51,6 @@ public class SalesTest {
     @Test
     public void testToString() {
         String stringUnderTest = "foo.Sales[ id=" + classUnderTest.getId() + " ]";
-        assertEquals(classUnderTest.toString(), stringUnderTest);
+        assertEquals(stringUnderTest, classUnderTest.toString());
     }
 }
