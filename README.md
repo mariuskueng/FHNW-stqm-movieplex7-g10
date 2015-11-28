@@ -1,5 +1,7 @@
 # movieplex 7 Hands-on labs
 
+[![Build Status](https://travis-ci.org/mariuskueng/FHNW-stqm-movieplex7-g10.svg?branch=master)](https://travis-ci.org/mariuskueng/FHNW-stqm-movieplex7-g10)
+
 ## Setup
 
     brew install wildfly-as
