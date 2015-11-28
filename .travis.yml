@@ -1,5 +1,5 @@
 language: java
 sudo: false
 env:
-- SRC_DIR="movielplex7"
+- SRC_DIR="movieplex7"
 script: cd $SRC_DIR && mvn clean verify
